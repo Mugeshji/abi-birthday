@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { preloadAllImages } from '../utils/preloadImages';
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -11,6 +12,9 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   const dateRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Start preloading all images in parallel immediately in the background
+    preloadAllImages();
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         onComplete: () => {

@@ -136,7 +136,7 @@ export const CoffeeSection: React.FC = () => {
                 <ImageWithFallback
                   src={BIRTHDAY_DATA.coffee.image || "/images/coffee.jpg"}
                   alt="Freshly Brewed Coffee for Abinaya"
-                  aspectRatio="landscape"
+                  aspectRatio="portrait"
                   placeholderLabel="COFFEE HOUR"
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

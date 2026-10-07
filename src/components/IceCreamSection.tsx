@@ -232,7 +232,7 @@ export const IceCreamSection: React.FC = () => {
                 <ImageWithFallback
                   src={BIRTHDAY_DATA.iceCream.image || "/images/icecream.jpg"}
                   alt="Gourmet Artisanal Ice Cream for Abinaya"
-                  aspectRatio="landscape"
+                  aspectRatio="portrait"
                   placeholderLabel="SWEETEST DESSERT"
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

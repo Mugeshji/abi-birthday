@@ -5,11 +5,13 @@ export interface ImageWithFallbackProps {
   src: string;
   alt: string;
   className?: string;
-  aspectRatio?: 'portrait' | 'landscape' | 'square' | 'auto' | 'none';
+  aspectRatio?: 'portrait' | 'portrait-tall' | 'landscape' | 'square' | 'auto' | 'none';
   fit?: 'cover' | 'contain';
   position?: string;
   placeholderLabel?: string;
   style?: React.CSSProperties;
+  loading?: 'eager' | 'lazy';
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
@@ -20,14 +22,18 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   fit = 'cover',
   position = 'center',
   placeholderLabel = 'MEMORIES',
-  style = {}
+  style = {},
+  loading = 'eager',
+  fetchPriority = 'high'
 }) => {
   const [error, setError] = useState(false);
 
   const getAspectClass = () => {
     switch (aspectRatio) {
       case 'portrait':
-        return 'aspect-[3/4]';
+        return 'aspect-[4/5] sm:aspect-[3/4]';
+      case 'portrait-tall':
+        return 'aspect-[9/16]';
       case 'landscape':
         return 'aspect-[16/10]';
       case 'square':
@@ -80,7 +86,9 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
       onError={() => setError(true)}
       className={`${getAspectClass()} ${getFitClass()} object-center ${className}`}
       style={{ objectPosition: position, ...style }}
-      loading="lazy"
+      loading={loading}
+      decoding="async"
+      fetchPriority={fetchPriority}
     />
   );
 };
