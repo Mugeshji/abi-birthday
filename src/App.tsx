@@ -49,6 +49,7 @@ export const App: React.FC = () => {
 
           {/* Main Cinematic Experience Journey */}
           <main className="relative z-10">
+            {/* Visual Story & Showcase Sections */}
             <HeroSection onEnter={() => scrollToSection('intro')} />
             <IntroSection />
             <DoctorSection />
@@ -56,12 +57,16 @@ export const App: React.FC = () => {
             <IceCreamSection />
             <HarrySection />
             <Gallery />
-            <ThingsINotice />
-            <BirthdayQuiz />
-            <CoffeeGame />
-            <MemoryCards />
-            <BirthdayLetter />
-            <FinalReveal onReplay={handleReplay} />
+
+            {/* Translucent Dark Blurred Ambient Zone (Flower video remains visible & playing with a soft frosted blur) */}
+            <div className="relative z-10 bg-black/40 backdrop-blur-xl border-t border-white/10 shadow-2xl">
+              <ThingsINotice />
+              <BirthdayQuiz />
+              <CoffeeGame />
+              <MemoryCards />
+              <BirthdayLetter />
+              <FinalReveal onReplay={handleReplay} />
+            </div>
           </main>
         </>
       )}
