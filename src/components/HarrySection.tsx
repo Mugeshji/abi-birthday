@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Sparkles, Dog, Gift } from 'lucide-react';
+import { Dog, Gift } from 'lucide-react';
 import { BIRTHDAY_DATA } from '../data/birthdayData';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -19,16 +19,16 @@ export const HarrySection: React.FC = () => {
       className="relative min-h-screen w-full flex flex-col justify-center px-6 py-24 text-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         {/* Left Column: Harry Photo Frame */}
         <div className="lg:col-span-6 flex justify-center order-2 lg:order-1">
           <div className="relative w-full max-w-md group">
-            
+
             {/* Ambient Warm Backlight */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-amber-500/10 via-amber-200/5 to-transparent rounded-3xl blur-2xl group-hover:bg-amber-400/15 transition-all duration-500" />
 
             <div className="liquid-glass-strong p-6 rounded-3xl border border-white/15 relative z-10 transition-all duration-500 group-hover:border-amber-200/40">
-              
+
               {/* Photo Frame Badge */}
               <div className="flex items-center justify-between text-xs font-mono text-amber-200/80 mb-4 px-2">
                 <span className="uppercase tracking-widest flex items-center space-x-2">
@@ -76,7 +76,7 @@ export const HarrySection: React.FC = () => {
 
         {/* Right Column: Text Content */}
         <div className="lg:col-span-6 space-y-8 order-1 lg:order-2">
-          
+
           <div className="flex items-center space-x-4">
             <span className="font-heading italic text-6xl text-amber-200/40 font-light">
               {BIRTHDAY_DATA.harry.number}

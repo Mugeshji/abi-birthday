@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, Heart, Plus, RefreshCw, Award, Check, Coffee, Layers, Flower2, Flame, Star, Grid2X2, IceCream } from 'lucide-react';
+import { Sparkles, Heart, Plus, RefreshCw, Check, Coffee, Layers, Flower2, Flame, Star, Grid2X2, IceCream } from 'lucide-react';
 import { BIRTHDAY_DATA } from '../data/birthdayData';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -12,7 +12,7 @@ export const IceCreamSection: React.FC = () => {
   const [selectedFlavor, setSelectedFlavor] = useState(0);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-  
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
@@ -89,16 +89,16 @@ export const IceCreamSection: React.FC = () => {
       className="relative min-h-screen w-full flex flex-col justify-center px-6 py-24 text-white overflow-hidden"
     >
       {/* Background Soft Warm Shimmer */}
-      <div 
-        className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 rounded-full blur-[140px] pointer-events-none transition-all duration-700" 
+      <div
+        className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 rounded-full blur-[140px] pointer-events-none transition-all duration-700"
         style={{ backgroundColor: flavors[selectedFlavor].glow }}
       />
 
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         {/* Left Column - Text & Content (matching Coffee Section style) */}
         <div className="lg:col-span-6 space-y-8">
-          
+
           <div className="flex items-center space-x-4">
             <span className="font-heading italic text-6xl text-amber-200/40 font-light">
               {BIRTHDAY_DATA.iceCream.number}
@@ -122,7 +122,7 @@ export const IceCreamSection: React.FC = () => {
                 {BIRTHDAY_DATA.iceCream.rule}
               </p>
             </div>
-            
+
             <p className="font-body text-lg sm:text-xl text-stone-300 font-light leading-relaxed">
               Because joy comes in towering scoops. Pick your favorite flavors, pile them high, and celebrate the sweetness you bring into the world every day.
             </p>
@@ -134,7 +134,7 @@ export const IceCreamSection: React.FC = () => {
               <span>Choose Your Flavors</span>
               <span className="text-amber-200/80">{flavors[selectedFlavor].name} selected</span>
             </div>
-            
+
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {flavors.map((flavor, idx) => {
                 const isSelected = selectedFlavor === idx;
@@ -145,11 +145,10 @@ export const IceCreamSection: React.FC = () => {
                       setSelectedFlavor(idx);
                       handleAddScoop(flavor.name);
                     }}
-                    className={`liquid-glass hover:liquid-glass-strong px-3.5 py-2.5 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between group cursor-pointer ${
-                      isSelected
+                    className={`liquid-glass hover:liquid-glass-strong px-3.5 py-2.5 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between group cursor-pointer ${isSelected
                         ? 'border-amber-200/60 bg-white/10 shadow-[0_0_20px_rgba(230,200,150,0.2)]'
                         : 'border-white/10 hover:border-amber-200/30'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center space-x-2 truncate">
                       <flavor.icon className="w-3.5 h-3.5 shrink-0 group-hover:scale-125 transition-transform text-amber-300/80" />
@@ -178,7 +177,7 @@ export const IceCreamSection: React.FC = () => {
               <span className="font-body text-sm tracking-wider uppercase font-medium">
                 Add Another Scoop
               </span>
-              <span 
+              <span
                 ref={badgeRef}
                 className="ml-2 px-2.5 py-0.5 rounded-full bg-amber-200/20 text-xs font-mono font-bold text-amber-200"
               >
@@ -220,7 +219,7 @@ export const IceCreamSection: React.FC = () => {
 
             {/* Ice Cream Card Box */}
             <div className="liquid-glass-strong p-8 rounded-3xl border border-white/15 relative overflow-hidden transition-all duration-500 group-hover:border-amber-200/40 group-hover:shadow-[0_0_50px_rgba(230,200,150,0.25)]">
-              
+
               <div className="absolute top-4 right-4 flex items-center space-x-2">
                 <span className="text-[10px] font-mono tracking-widest text-amber-200/60 uppercase">
                   UNLIMITED REFILLS
@@ -237,7 +236,7 @@ export const IceCreamSection: React.FC = () => {
                   placeholderLabel="SWEETEST DESSERT"
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
+
                 {/* Floating Scoop Count Badge */}
                 <div className="absolute bottom-3 left-3 liquid-glass-strong px-3.5 py-1.5 rounded-full border border-amber-200/40 flex items-center space-x-2 shadow-lg backdrop-blur-md">
                   <IceCream className="w-3.5 h-3.5 text-amber-300" />
@@ -253,7 +252,7 @@ export const IceCreamSection: React.FC = () => {
                   <span>Current: {flavors[selectedFlavor].name}</span>
                   <span className="text-stone-400">100% Sweet Joy</span>
                 </div>
-                
+
                 <p className="font-heading italic text-xl text-stone-200 group-hover:text-amber-100 transition-colors">
                   "{flavors[selectedFlavor].note}"
                 </p>

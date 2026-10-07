@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Activity, Heart, Stethoscope, Sparkles, Building2, UserCheck, ShieldCheck } from 'lucide-react';
+import { Activity, Heart, Stethoscope, Building2, ShieldCheck } from 'lucide-react';
 import { BIRTHDAY_DATA } from '../data/birthdayData';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -96,7 +96,7 @@ export const DoctorSection: React.FC = () => {
       className="relative min-h-screen w-full flex flex-col justify-center px-6 py-28 text-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto w-full space-y-16 relative z-10">
-        
+
         {/* Header Block */}
         <div className="space-y-6 max-w-4xl">
           <div className="flex items-center space-x-4">
@@ -122,7 +122,7 @@ export const DoctorSection: React.FC = () => {
 
           {/* Life Philosophy Quote & ECG Heartbeat Monitor Box */}
           <div className="liquid-glass-strong p-8 rounded-3xl border border-amber-200/30 relative overflow-hidden shadow-[0_0_50px_rgba(230,200,150,0.15)] space-y-6">
-            
+
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-white/10">
               <div className="flex items-center space-x-3 text-xs font-mono text-amber-200/90 tracking-widest uppercase">
                 <Activity className="w-4 h-4 text-amber-300 animate-pulse" />
@@ -172,9 +172,8 @@ export const DoctorSection: React.FC = () => {
               onMouseEnter={() => setActiveCard(idx)}
               onMouseLeave={() => setActiveCard(null)}
               onClick={() => setActiveCard(idx)}
-              className={`liquid-glass hover:liquid-glass-strong p-6 rounded-3xl border border-white/15 transition-all duration-500 cursor-pointer group flex flex-col justify-between min-h-[260px] relative overflow-hidden backdrop-blur-md ${
-                activeCard === idx ? 'border-amber-200/60 shadow-[0_0_35px_rgba(230,200,150,0.25)] translate-y-[-4px]' : ''
-              }`}
+              className={`liquid-glass hover:liquid-glass-strong p-6 rounded-3xl border border-white/15 transition-all duration-500 cursor-pointer group flex flex-col justify-between min-h-[260px] relative overflow-hidden backdrop-blur-md ${activeCard === idx ? 'border-amber-200/60 shadow-[0_0_35px_rgba(230,200,150,0.25)] translate-y-[-4px]' : ''
+                }`}
             >
               {/* Card top badge */}
               <div className="flex items-center justify-between text-xs font-mono text-stone-400">

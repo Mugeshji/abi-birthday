@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, RotateCcw, Heart } from 'lucide-react';
-import { BIRTHDAY_DATA } from '../data/birthdayData';
+import { RotateCcw, Heart } from 'lucide-react';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,19 +36,19 @@ export const FinalReveal: React.FC<FinalRevealProps> = ({ onReplay }) => {
         duration: 1.4,
         ease: 'power3.out'
       })
-      .to(textBigRef.current, {
-        opacity: 1,
-        y: 0,
-        filter: 'blur(0px)',
-        duration: 1.6,
-        ease: 'power4.out'
-      }, '-=0.6')
-      .to(subtextRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: 'power3.out'
-      }, '-=0.8');
+        .to(textBigRef.current, {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 1.6,
+          ease: 'power4.out'
+        }, '-=0.6')
+        .to(subtextRef.current, {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: 'power3.out'
+        }, '-=0.8');
     }, containerRef);
 
     return () => ctx.revert();

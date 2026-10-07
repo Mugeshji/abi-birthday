@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { X, ZoomIn, Sparkles, ChevronLeft, ChevronRight, Filter, Heart } from 'lucide-react';
+import { X, ZoomIn, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BIRTHDAY_DATA, type MemoryItem } from '../data/birthdayData';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -17,8 +17,8 @@ export const Gallery: React.FC = () => {
   const memories = BIRTHDAY_DATA.memories as MemoryItem[];
 
   // Filter memories based on active tag
-  const filteredMemories = activeTag === 'all' 
-    ? memories 
+  const filteredMemories = activeTag === 'all'
+    ? memories
     : memories.filter((m) => m.aspectRatio === activeTag || m.tag?.toLowerCase().includes(activeTag.toLowerCase()));
 
   useEffect(() => {
@@ -78,18 +78,18 @@ export const Gallery: React.FC = () => {
       className="relative min-h-screen w-full px-4 sm:px-6 lg:px-8 py-24 text-white"
     >
       <div className="max-w-7xl mx-auto space-y-12">
-        
+
         {/* Gallery Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full liquid-glass border border-white/10 text-xs font-mono uppercase tracking-[0.25em] text-amber-200/80 shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>Visual Storybook • {memories.length} Moments</span>
           </div>
-          
+
           <h2 className="font-heading italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-stone-100 font-light tracking-tight">
             Photo Memories
           </h2>
-          
+
           <p className="font-body text-base sm:text-lg text-stone-300 max-w-xl mx-auto font-light leading-relaxed">
             Every snapshot holds a story. Tap any photo to expand into high definition.
           </p>
@@ -98,31 +98,28 @@ export const Gallery: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
             <button
               onClick={() => setActiveTag('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                activeTag === 'all'
+              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTag === 'all'
                   ? 'bg-amber-200/20 text-amber-200 border border-amber-200/60 shadow-[0_0_15px_rgba(230,200,150,0.2)]'
                   : 'liquid-glass text-stone-400 hover:text-white border border-white/10'
-              }`}
+                }`}
             >
               All Photos ({memories.length})
             </button>
             <button
               onClick={() => setActiveTag('portrait')}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                activeTag === 'portrait'
+              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTag === 'portrait'
                   ? 'bg-amber-200/20 text-amber-200 border border-amber-200/60 shadow-[0_0_15px_rgba(230,200,150,0.2)]'
                   : 'liquid-glass text-stone-400 hover:text-white border border-white/10'
-              }`}
+                }`}
             >
               Portraits
             </button>
             <button
               onClick={() => setActiveTag('landscape')}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                activeTag === 'landscape'
+              className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer ${activeTag === 'landscape'
                   ? 'bg-amber-200/20 text-amber-200 border border-amber-200/60 shadow-[0_0_15px_rgba(230,200,150,0.2)]'
                   : 'liquid-glass text-stone-400 hover:text-white border border-white/10'
-              }`}
+                }`}
             >
               Moments & Places
             </button>
@@ -159,7 +156,7 @@ export const Gallery: React.FC = () => {
                   placeholderLabel={photo.tag || 'MEMORIES'}
                   className="w-full h-auto max-h-[500px] object-center transition-transform duration-700 group-hover:scale-105 block"
                 />
-                
+
                 {/* Hover Overlay Zoom Icon */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                   <div className="w-10 h-10 rounded-full liquid-glass-strong flex items-center justify-center text-amber-200 border border-white/30 scale-90 group-hover:scale-100 transition-transform shadow-lg">

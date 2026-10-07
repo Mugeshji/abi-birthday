@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Coffee, Sparkles, Heart } from 'lucide-react';
+import { Coffee, Heart } from 'lucide-react';
 import { BIRTHDAY_DATA } from '../data/birthdayData';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -60,10 +60,10 @@ export const CoffeeSection: React.FC = () => {
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-amber-900/15 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         {/* Left Column - Text Content */}
         <div className="lg:col-span-6 space-y-8">
-          
+
           <div className="flex items-center space-x-4">
             <span className="font-heading italic text-6xl text-amber-200/40 font-light">
               {BIRTHDAY_DATA.coffee.number}
@@ -127,7 +127,7 @@ export const CoffeeSection: React.FC = () => {
 
             {/* Coffee Card Box */}
             <div className="liquid-glass-strong p-8 rounded-3xl border border-white/15 relative overflow-hidden transition-all duration-500 group-hover:border-amber-200/40 group-hover:shadow-[0_0_50px_rgba(92,58,33,0.3)]">
-              
+
               <div className="absolute top-4 right-4 text-amber-200/40 group-hover:text-amber-200 transition-colors">
                 <Coffee className="w-8 h-8 stroke-[1.2]" />
               </div>
