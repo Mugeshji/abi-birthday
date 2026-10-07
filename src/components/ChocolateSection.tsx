@@ -12,7 +12,7 @@ export const ChocolateSection: React.FC = () => {
       className="relative min-h-screen w-full flex flex-col justify-center px-6 py-24 bg-black text-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto w-full space-y-16">
-        
+
         {/* Header Block */}
         <div className="space-y-6 max-w-3xl">
           <div className="flex items-center space-x-4">
@@ -50,9 +50,8 @@ export const ChocolateSection: React.FC = () => {
               onMouseEnter={() => setActiveCard(idx)}
               onMouseLeave={() => setActiveCard(null)}
               onClick={() => setActiveCard(idx)}
-              className={`liquid-glass hover:liquid-glass-strong p-6 rounded-3xl border border-white/10 transition-all duration-500 cursor-pointer group flex flex-col justify-between min-h-[240px] relative overflow-hidden ${
-                activeCard === idx ? 'border-amber-200/50 shadow-[0_0_35px_rgba(230,200,150,0.15)] translate-y-[-4px]' : ''
-              }`}
+              className={`liquid-glass hover:liquid-glass-strong p-6 rounded-3xl border border-white/10 transition-all duration-500 cursor-pointer group flex flex-col justify-between min-h-[240px] relative overflow-hidden ${activeCard === idx ? 'border-amber-200/50 shadow-[0_0_35px_rgba(230,200,150,0.15)] translate-y-[-4px]' : ''
+                }`}
             >
               {/* Card top badge */}
               <div className="flex items-center justify-between text-xs font-mono text-stone-400">

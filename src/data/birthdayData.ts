@@ -67,6 +67,32 @@ export const BIRTHDAY_DATA = {
     image: "/images/coffee.jpeg"
   },
 
+  chocolate: {
+    number: "02",
+    title: "CHOCOLATE",
+    line1: "Some things are simply impossible to resist.",
+    line2: "Chocolate is definitely one of them.",
+    playful: "Priority level 100: chocolate comes first.",
+    cards: [
+      {
+        title: "Dark Chocolate",
+        note: "For the sophisticated chocolate lover."
+      },
+      {
+        title: "Milk Chocolate",
+        note: "Sweet, comforting, and impossible to refuse."
+      },
+      {
+        title: "Chocolate Cake",
+        note: "Because one piece is never enough."
+      },
+      {
+        title: "Chocolate First",
+        note: "Birthday rule: eat the chocolate first."
+      }
+    ]
+  },
+
   doctor: {
     number: "02",
     title: "HEALING & HEART",
